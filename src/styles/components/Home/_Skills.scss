@@ -1,5 +1,73 @@
 .Skills {
-    background-color: $debug;
-    padding: $gutter;
-    color: $primary;
+  padding: calc($gutter * 3) $gutter;
+  display: flex;
+  height: 90vh;
+
+  &__computer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__renderer {
+      background-color: $debug;
+      border-radius: 20px;
+      height: calc(40 * $gutter);
+      width: calc(50 * $gutter);
+    }
+  }
+
+  &__content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    &__title {
+      font-size: $font-xxl;
+      font-weight: $bold;
+      color: $black;
+      margin: $gutter 0;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      cursor: pointer;
+
+      &__item {
+        font-size: $font-md;
+        position: relative;
+        padding: calc($gutter / 2) 0;
+        overflow: hidden;
+
+        &.--active, &:hover {
+          color: $red;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $red;
+            animation: slideLeft .2s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

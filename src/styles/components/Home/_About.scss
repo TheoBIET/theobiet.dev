@@ -2,7 +2,7 @@
   padding: $gutter;
   color: $primary;
   position: relative;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -29,10 +29,10 @@
   }
 
   &__character {
-    height: 80vh;
+    height: 70vh;
     width: 25%;
     border-radius: 20px;
-    background-color: $red;
+    background-color: $debug;
     position: absolute;
     bottom: calc($gutter * 2);
     right: calc($gutter * 2);
