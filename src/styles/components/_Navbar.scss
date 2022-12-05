@@ -4,12 +4,6 @@
   padding: calc($gutter * 2) calc($gutter * 5);
   justify-content: space-between;
 
-  &__logo {
-    img {
-      height: calc($gutter * 4);
-    }
-  }
-
   &__burger {
     display: flex;
     flex-direction: column;
