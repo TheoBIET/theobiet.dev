@@ -1,7 +1,7 @@
 import Landing from './Landing';
 import About from './About';
 import Skills from './Skills';
-import Travels from './Travels';
+// import Travels from './Travels';
 import Gallery from './Gallery';
 
 export default function Home() {
