@@ -1,4 +1,4 @@
-import logo from '../assets/logo.svg';
+import Logo from './Logo';
 
 export default function Navbar() {
     const scrollTo = (className) => {
@@ -10,7 +10,7 @@ export default function Navbar() {
         <div className="Navbar">
             <div className="Navbar__logo"
                 onClick={() => scrollTo('Navbar')}>
-                <img src={logo} alt="logo" />
+                <Logo color="#010a10" height="100" />
             </div>
             <div className="Navbar__burger">
                 <div className="Navbar__burger__line"></div>

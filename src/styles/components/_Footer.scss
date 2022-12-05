@@ -1,7 +1,19 @@
 .Footer {
   &__content {
-    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: $black;
+    color: $primary;
+    text-align: center;
+    gap: calc($gutter * 3);
+    padding: calc($gutter * 5);
+
+    &__text {
+      font-size: $font-sm;
+      font-weight: $thin;
+    }
   }
 
   &__links {
@@ -32,6 +44,7 @@
             width: 100%;
             height: 5px;
             background-color: $black;
+            animation: slideLeft .3s ease forwards;
           }
         }
 
@@ -39,6 +52,7 @@
           content: "/";
           position: absolute;
           right: calc($list-gap / -2);
+          pointer-events: none;
         }
 
         &:last-child {
@@ -48,5 +62,21 @@
         }
       }
     }
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opcacity: 1;
+    transform: translateX(0);
   }
 }
