@@ -10,6 +10,10 @@
     gap: calc($gutter * 3);
     padding: calc($gutter * 5);
 
+    &__logo {
+      cursor: pointer;
+    }
+
     &__text {
       font-size: $font-sm;
       font-weight: $thin;
@@ -44,7 +48,7 @@
             width: 100%;
             height: 5px;
             background-color: $black;
-            animation: slideLeft .3s ease forwards;
+            animation: slideLeft 0.3s ease forwards;
           }
         }
 
