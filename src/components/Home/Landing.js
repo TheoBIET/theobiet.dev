@@ -1,35 +1,8 @@
+import { defaultData } from '../../assets/data.js';
 import { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function Landing() {
-    const roles = [
-        'a Fullstack Developer',
-        'a passionate',
-        'a Node.js Ninja',
-        'a Data Lover',
-        'learning AI',
-        'discovering Web 3',
-        'a technology enthusiast',
-    ]
-
-    const socials = [
-        {
-            icon: <FaGithub />,
-            url: 'https://github.com/TheoBIET',
-            className: 'github'
-        },
-        {
-            icon: <FaLinkedin />,
-            url: 'https://www.linkedin.com/in/ThéoBIET/',
-            className: 'linkedin'
-        },
-        {
-            icon: <FaTwitter />,
-            url: 'https://twitter.com/DavDav_js',
-            className: 'twitter'
-        },
-    ]
-
+    const { roles, socials } = defaultData;
     const [role, setRole] = useState(0);
 
     useEffect(() => {
@@ -65,8 +38,12 @@ export default function Landing() {
                     </ul>
                 </div>
             </div>
+            <div className="Landing__desk">
+                <div className="Landing__desk__renderer">
+                </div>
+            </div>
             <div className="Landing__scroll">
-                <p>As you can see this website isn't finished. The development is currently in progress, so some things can seem to be "broken" atm.</p>
+                <p>Scroll to discover</p>
             </div>
         </div>
     );

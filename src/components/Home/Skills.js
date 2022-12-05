@@ -1,13 +1,8 @@
+import { defaultData } from '../../assets/data.js';
 import { useState } from "react";
 
 export default function Skills() {
-    const skillsList = [
-        'Languages',
-        'Technologies',
-        'Tools',
-        'Softwares',
-    ]
-
+    const { skills: skillsList } = defaultData;
     const [selectedSkill, setSelectedSkill] = useState(skillsList[0]);
 
     return (

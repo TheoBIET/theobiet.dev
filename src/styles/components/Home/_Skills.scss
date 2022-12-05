@@ -23,6 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    padding-right: calc($gutter * 5);
 
     &__title {
       font-size: $font-xxl;
