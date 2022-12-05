@@ -3,8 +3,15 @@
   gap: calc($gutter * 3);
   padding: calc($gutter * 2) calc($gutter * 5);
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 
   &__logo {
+    cursor: pointer;
+    
     img {
       height: calc($gutter * 4);
     }

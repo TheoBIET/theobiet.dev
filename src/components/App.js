@@ -1,5 +1,5 @@
 import Navbar from './Navbar';
-import Home from './Home';
+import Home from './Home/Home';
 import Footer from './Footer';
 
 export default function App() {
