@@ -9,7 +9,7 @@ title: Old Computer, Mouse and Keyboard Low Poly
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
+export default function Computer(props) {
   const { nodes, materials } = useGLTF('/computer.glb')
   return (
     <group {...props} dispose={null}>

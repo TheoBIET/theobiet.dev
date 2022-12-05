@@ -1,7 +1,8 @@
 .Skills {
-  padding: calc($gutter * 3) $gutter;
+  padding: calc($gutter * 10) $gutter;
   display: flex;
   height: 90vh;
+  justify-content: center;
 
   &__computer {
     height: 100%;
@@ -10,7 +11,6 @@
     align-items: center;
 
     &__renderer {
-      background-color: $debug;
       border-radius: 20px;
       height: calc(40 * $gutter);
       width: calc(50 * $gutter);
@@ -18,12 +18,11 @@
   }
 
   &__content {
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    padding-right: calc($gutter * 5);
+    padding-right: calc($gutter * 8);
 
     &__title {
       font-size: $font-xxl;

@@ -1,3 +1,8 @@
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import Avatar from '../Models/Avatar';
+import { OrbitControls } from '@react-three/drei';
+
 export default function About() {
     return (
         <div className="About">
@@ -19,7 +24,18 @@ export default function About() {
                 </p>
             </div>
             <div className="About__character">
-                {/* TODO: Add ThreeJS Integration */}
+                <Canvas
+                    camera={{ position: [5, 2, 10], fov: 20, zoom: 1.75 }}
+                    style={{ backgroundColor: 'transparent' }}
+                >
+                    <ambientLight intensity={1.25} />
+                    <directionalLight intensity={0.4} />
+                    <Suspense fallback={null}>
+                        <Avatar position={[.5, -1, 0]
+                        } />
+                    </Suspense>
+                    <OrbitControls enableZoom={false} />
+                </Canvas>
             </div>
         </div>
     )

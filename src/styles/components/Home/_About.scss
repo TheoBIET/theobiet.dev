@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: flex-end;
   margin: 0 auto;
+  position: relative;
 
   &__title {
     font-size: $font-xxl;
@@ -29,11 +30,10 @@
   }
 
   &__character {
-    height: 70vh;
-    width: 25%;
-    border-radius: 20px;
-    background-color: $debug;
     position: absolute;
+    height: 80vh;
+    width: 50%;
+    border-radius: 20px;
     bottom: calc($gutter * 2);
     right: calc($gutter * 2);
   }
