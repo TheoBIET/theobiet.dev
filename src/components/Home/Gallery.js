@@ -5,7 +5,7 @@ export default function Gallery() {
     return (
         <div className="Gallery">
             <div className="Gallery__content">
-                <h2 className="Gallery__content__title">Manga Gallery</h2>
+                <h2 className="Gallery__content__title">Gallery</h2>
                 <p className="Gallery__content__paragraph">
                     I love to watch some anime on my free-time, you can see below a gallery of a lot of them.
                     If vous vous posez la question, Oui j’ai ajouté cette section afin d’avoir une excuse
