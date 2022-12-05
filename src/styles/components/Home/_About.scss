@@ -1,5 +1,40 @@
 .About {
-    background-color: $debug;
+  padding: $gutter;
+  color: $primary;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 auto;
+
+  &__title {
+    font-size: $font-xxl;
+    font-weight: $bold;
+    color: $black;
+    margin: $gutter;
+  }
+
+  &__content {
+    background-color: $secondary;
     padding: $gutter;
-    color: $primary;
+    border-radius: 20px;
+
+    p {
+      width: 70%;
+      font-size: $font-md;
+      padding: $gutter;
+      color: $primary;
+    }
+  }
+
+  &__character {
+    height: 80vh;
+    width: 25%;
+    border-radius: 20px;
+    background-color: $red;
+    position: absolute;
+    bottom: calc($gutter * 2);
+    right: calc($gutter * 2);
+  }
 }
