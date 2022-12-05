@@ -1,0 +1,9 @@
+{
+  "short_name": "theobiet.dev",
+  "name": "theobiet.dev - portfolio - web fullstack developer",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#F8EDE3",
+  "background_color": "#F8EDE3"
+}

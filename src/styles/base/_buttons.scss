@@ -1,0 +1,43 @@
+.button {
+    padding: $gutter;
+    background-color: $secondary;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: $box-shadow-1;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.03) translateY(-2px);
+        box-shadow: $box-shadow-1-hover;
+    }
+
+    &.little {
+        padding: calc($gutter / 2);
+        border-radius: 15px;
+    }
+
+    &.linkedin {
+        background-color: #0077B5;
+        color: $primary;
+    }
+
+    &.github {
+        background-color: #24292e;
+        color: $primary;
+    }
+
+    &.twitter {
+        background-color: #1DA1F2;
+        color: $primary;
+    }
+
+    &.red {
+        background-color: $red;
+        color: $primary;
+    }
+
+    &.yellow {
+        background-color: $yellow;
+        color: $primary;
+    }
+}

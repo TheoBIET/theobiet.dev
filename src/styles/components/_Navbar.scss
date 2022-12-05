@@ -1,0 +1,48 @@
+.Navbar {
+  display: flex;
+  gap: calc($gutter * 3);
+  padding: calc($gutter * 2) calc($gutter * 5);
+  justify-content: space-between;
+
+  &__logo {
+    img {
+      height: calc($gutter * 4);
+    }
+  }
+
+  &__burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &__line {
+      width: 75px;
+      height: 6px;
+      background-color: $black;
+      transition: all 0.3s ease;
+      
+      &:nth-child(2) {
+        transition: all 0.1s ease;
+        margin: 15px 0;
+      }
+    }
+
+    &:hover {
+      .Navbar__burger__line {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(15px, 15 - 2px);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(15px, -15px);
+        }
+      }
+    }
+  }
+}
