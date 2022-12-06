@@ -1,5 +1,7 @@
 import { defaultData } from '../../assets/data.js';
-import { useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { Desk } from '../Models/Desk';
 
 export default function Landing() {
     const { roles, socials } = defaultData;
@@ -40,6 +42,20 @@ export default function Landing() {
             </div>
             <div className="Landing__desk">
                 <div className="Landing__desk__renderer">
+                    <Canvas
+                        className="Skills__computer__renderer"
+                        camera={{ position: [0, 2, 7], fov: 30, zoom: 1.5 }}
+                        style={{ backgroundColor: 'transparent' }}
+                    >
+                        <ambientLight intensity={1.25} />
+                        <directionalLight intensity={4} />
+                        <Suspense fallback={null}>
+                            <Desk
+                                position={[-.5, -1.5, .3]}
+                                rotation={[0, -.25, 0]}
+                            />
+                        </Suspense>
+                    </Canvas>
                 </div>
             </div>
             <div className="Landing__scroll">

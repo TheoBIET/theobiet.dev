@@ -45,15 +45,16 @@
   }
 
   &__desk {
-    width: 50%;
+    width: 70%;
     height: 100%;
     display: flex;
     align-items: center;
+    position: absolute;
+    right: calc($gutter * -2);
 
     &__renderer {
       height: 75%;
       width: 100%;
-      background-color: $debug;
       border-radius: 20px;
     }
   }
