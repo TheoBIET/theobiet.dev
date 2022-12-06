@@ -1,9 +1,17 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Avatar from '../Models/Avatar';
-import { OrbitControls } from '@react-three/drei';
 
 export default function About() {
+    const [characterRotation, setCharacterRotation] = React.useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCharacterRotation(characterRotation + 0.01);
+        }, 10);
+        return () => clearInterval(interval);
+    }, [characterRotation]);
+
     return (
         <div className="About">
             <div className="About__title">
@@ -31,10 +39,11 @@ export default function About() {
                     <ambientLight intensity={1.25} />
                     <directionalLight intensity={0.4} />
                     <Suspense fallback={null}>
-                        <Avatar position={[.5, -1, 0]
-                        } />
+                        <Avatar
+                            position={[0, -1, 0]}
+                            rotation={[0, characterRotation, 0]}
+                        />
                     </Suspense>
-                    <OrbitControls enableZoom={false} />
                 </Canvas>
             </div>
         </div>

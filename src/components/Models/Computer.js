@@ -6,11 +6,27 @@ source: https://sketchfab.com/3d-models/old-computer-mouse-and-keyboard-low-poly
 title: Old Computer, Mouse and Keyboard Low Poly
 */
 
-import React from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef, useState, useEffect } from 'react';
+import { useGLTF, Text } from '@react-three/drei';
+import { defaultData } from '../../assets/data';
 
 export default function Computer(props) {
-  const { nodes, materials } = useGLTF('/computer.glb')
+  const { nodes, materials } = useGLTF('/computer.glb');
+  const [currentPage, setCurrentPage] = useState(0);
+  const selectedSkills = defaultData[props.skill];
+  const screenRef = useRef();
+
+  useEffect(() => {
+    screenRef.current.material.color.set(props.theme.background);
+  }, [props.theme]);
+
+  const changeCurrentPage = (e) => {
+    e.stopPropagation();
+    const maxPage = selectedSkills.length - 1;
+    if (currentPage === maxPage) setCurrentPage(0);
+    else setCurrentPage(currentPage + 1);
+  };
+
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -29,8 +45,33 @@ export default function Computer(props) {
             <mesh geometry={nodes.Object_12.geometry} material={materials['Material.007']} />
             <mesh geometry={nodes.Object_13.geometry} material={materials['Material.009']} />
           </group>
-          <group position={[-1.32, 0.74, -0.16]} scale={[0.67, 0.77, 0.77]}>
-            <mesh geometry={nodes.Object_15.geometry} material={materials['Material.006']} />
+          <group position={[-1.32, 0.74, -0.16]} scale={[0.67, 0.77, 0.77]} >
+            <Text
+              position={[-.6, .85, 1.2]}
+              color={props.theme.color}
+              anchorX="left"
+              anchorY="left"
+              maxWidth={1}
+              font="/fonts/VT323.ttf"
+            >
+              {selectedSkills[currentPage].join('\n')}
+            </Text>
+            <Text
+              position={[.2, .3, 1.2]}
+              color={props.theme.color}
+              anchorX="left"
+              anchorY="left"
+              maxWidth={2}
+              font="/fonts/VT323.ttf"
+            >
+              Page {currentPage + 1}/{selectedSkills.length}
+            </Text>
+            <mesh
+              geometry={nodes.Object_15.geometry}
+              material={materials['Material.006']}
+              ref={screenRef}
+              onClick={changeCurrentPage}
+            />
           </group>
         </group>
       </group>
