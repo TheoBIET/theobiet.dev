@@ -1,0 +1,106 @@
+.Skills {
+  padding: calc($gutter * 10) $gutter;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+
+  &__computer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__renderer {
+      border-radius: 20px;
+      height: calc(40 * $gutter);
+      width: calc(50 * $gutter);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: calc($gutter * 8);
+    gap: $gutter;
+
+    &__title {
+      font-size: $font-xxl;
+      font-weight: $bold;
+      color: $black;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      cursor: pointer;
+
+      &__item {
+        font-size: $font-md;
+        position: relative;
+        padding: calc($gutter / 2) 0;
+        overflow: hidden;
+
+        &.--active, &:hover {
+          color: $red;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $red;
+            animation: slideLeft .2s ease-in-out;
+          }
+        }
+      }
+    }
+
+    &__themes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: calc($gutter / 2);
+
+      &__item {
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        transition: all .2s ease-in-out;
+        box-shadow: $box-shadow-1;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+          filter: brightness(1.2);
+        }
+
+        &.--red {
+          background-color: $red;
+        }
+
+        &.--yellow {
+          background-color: $yellow;
+        }
+
+        &.--active {
+          filter: brightness(1.2);
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

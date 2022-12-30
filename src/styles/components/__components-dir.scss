@@ -1,3 +1,11 @@
 @import "Navbar";
-@import "Home";
+
+// Homepage
+@import "Home/Home";
+@import "Home/Landing";
+@import "Home/About";
+@import "Home/Travels";
+@import "Home/Skills";
+@import "Home/Gallery";
+
 @import "Footer";

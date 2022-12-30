@@ -1,0 +1,6 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  gap: calc($gutter * 5);
+  padding: calc($gutter * 2) calc($gutter * 10);
+}

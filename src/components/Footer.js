@@ -1,4 +1,5 @@
 import Logo from './Logo';
+import { scrollTo } from '../utils';
 
 export default function Footer() {
     const navigationsLink = ['Home', 'About Me', 'Skills', 'Experiences', 'Projects', 'Contact'];
@@ -6,7 +7,7 @@ export default function Footer() {
     return (
         <div className="Footer">
             <footer className="Footer__content">
-                <div className="Footer__content__logo">
+                <div className="Footer__content__logo" onClick={() => scrollTo(false, true)}>
                     <Logo color="#fffbf2" height="150" />
                 </div>
                 <div className="Footer__content__text">

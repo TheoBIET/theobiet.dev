@@ -1,0 +1,68 @@
+.Landing {
+  height: calc(100vh - (4 * $gutter)); // 100vh - Home component padding
+  display: flex;
+  position: relative;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: center;
+    width: 50%;
+
+    &__title {
+      color: $black;
+      font-size: $font-xxl;
+      font-weight: $bold;
+      line-height: 1.2;
+
+      h2,
+      p {
+        font-size: $font-xl;
+      }
+
+      &__job {
+        color: $red;
+      }
+    }
+
+    &__actions {
+      margin-top: $gutter;
+      display: flex;
+      flex-direction: column;
+      gap: $gutter;
+
+      &__buttons {
+        display: flex;
+        gap: calc($gutter / 2);
+      }
+
+      &__socials {
+        display: flex;
+        gap: calc($gutter / 2);
+      }
+    }
+  }
+
+  &__desk {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: calc($gutter * -2);
+
+    &__renderer {
+      height: 75%;
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

@@ -1,15 +1,25 @@
+import { useEffect, useState } from 'react';
+import { scrollTo } from '../utils';
 import Logo from './Logo';
 
 export default function Navbar() {
-    const scrollTo = (className) => {
-        const element = document.querySelector(`.${className}`);
-        element.scrollIntoView({ behavior: 'smooth' });
-    };
+    const [isLogoVisible, setIsLogoVisible] = useState(true);
+
+    useEffect(() => {
+        const threshold = 100;
+        window.onscroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            if (currentScrollPos < threshold) return setIsLogoVisible(true);
+            setIsLogoVisible(false);
+        }
+    }, []);
 
     return (
         <div className="Navbar">
-            <div className="Navbar__logo"
-                onClick={() => scrollTo('Navbar')}>
+            <div
+                className={`Navbar__logo ${isLogoVisible ? '--visible' : '--hidden'}`}
+                onClick={() => scrollTo(false, true)}
+            >
                 <Logo color="#010a10" height="100" />
             </div>
             <div className="Navbar__burger">

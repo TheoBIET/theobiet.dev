@@ -1,0 +1,40 @@
+.About {
+  padding: $gutter;
+  color: $primary;
+  position: relative;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 auto;
+  position: relative;
+
+  &__title {
+    font-size: $font-xxl;
+    font-weight: $bold;
+    color: $black;
+    margin: $gutter;
+  }
+
+  &__content {
+    background-color: $secondary;
+    padding: $gutter;
+    border-radius: 20px;
+
+    p {
+      width: 70%;
+      font-size: $font-md;
+      padding: $gutter;
+      color: $primary;
+    }
+  }
+
+  &__character {
+    position: absolute;
+    height: 80vh;
+    width: 30%;
+    border-radius: 20px;
+    bottom: calc($gutter * 2);
+    right: calc($gutter * 2);
+  }
+}
